@@ -28,16 +28,23 @@ export function main() {
  */
 
 function arrayManipulation(n: number, queries: number[][]): number {
-    const arr = Array(n).fill(0);
-    queries.forEach(query => {
+    const slopes = queries.reduce((acc, query) => {
         const [a, b, k] = query;
-        for(let i = a; i <= b; i++) {
-            arr[i - 1] += k
+        acc[a-1] += k
+        if (b < n) {
+            acc[b] -= k
         }
-    })
-    const maxVal = Math.max(...arr)
+        return acc
+    }, Array(n).fill(0))
+    const runningCount = slopes.reduce((acc, cur) => {
+        let prev = acc[acc.length-1] ?? 0
+        acc.push(prev + cur)
+        return acc
+    }, [])
+    const maxVal = Math.max(...runningCount)
     return maxVal
 }
 
 main()
+
 
