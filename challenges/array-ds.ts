@@ -1,6 +1,6 @@
 main();
 
-function main() {
+export function main() {
 
     const arr = [1,2,3]
     const res = reverseArray(arr);
