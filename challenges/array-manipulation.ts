@@ -1,11 +1,20 @@
 export function main() {
-    const n = 5
+    // const n = 5
+    // const queries = [
+    //     [ 1, 2, 100 ],
+    //     [ 2, 5, 100 ],
+    //     [ 3, 4, 100 ]
+    // ]
+    // const expected = 200
+    const n = 10
     const queries = [
-        [ 1, 2, 100 ],
-        [ 2, 5, 100 ],[ 3, 4, 100 ]
+        [ 2, 6, 8 ],
+        [ 3, 5, 7 ],
+        [ 1, 8, 1 ],
+        [ 5, 9, 15 ]
     ]
+    const expected = 31
     const result = arrayManipulation(n, queries);
-    const expected = 200
     console.log({result, expected});
 }
 
@@ -19,8 +28,15 @@ export function main() {
  */
 
 function arrayManipulation(n: number, queries: number[][]): number {
-    // Write your code here
-
+    const arr = Array(n).fill(0);
+    queries.forEach(query => {
+        const [a, b, k] = query;
+        for(let i = a; i <= b; i++) {
+            arr[i - 1] += k
+        }
+    })
+    const maxVal = Math.max(...arr)
+    return maxVal
 }
 
 main()
