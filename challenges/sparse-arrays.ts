@@ -1,4 +1,4 @@
-function main() {
+export function main() {
     const strings = [ 'aba', 'baba', 'aba', 'xzxb' ]
     const queries = [ 'aba', 'xzxb', 'ab' ]
     const result = matchingStrings(strings, queries);
@@ -16,8 +16,12 @@ function main() {
  */
 
 function matchingStrings(strings: string[], queries: string[]): number[] {
-    // Write your code here
-
+    const stringMap = strings.reduce<Record<string, number>>((acc, cur) => {
+        acc[cur] = typeof acc[cur] == "number" ? acc[cur] + 1 : 1
+        return acc
+    }, {})
+    const queryCounts = queries.map(q => stringMap[q] ?? 0)
+    return queryCounts
 }
 
 main()
