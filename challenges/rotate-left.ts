@@ -15,8 +15,7 @@ export function main() {
  */
 
 function rotateLeft(d: number, arr: number[]): number[] {
-
-
+   return [...arr.splice(d), ...arr]
 }
 
 
