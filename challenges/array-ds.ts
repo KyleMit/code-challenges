@@ -1,5 +1,3 @@
-main();
-
 export function main() {
 
     const arr = [1,2,3]
@@ -23,3 +21,5 @@ function reverseArray(arr: number[]): number[] {
         return acc;
     }, new Array(len));
 }
+
+main();
