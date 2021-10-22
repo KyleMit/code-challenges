@@ -8,9 +8,7 @@ export function main() {
         [ 2, 1, 0 ],
         [ 2, 1, 1 ]
     ]
-
     const result: number[] = dynamicArray(n, queries);
-
     console.log(result)
 }
 
@@ -25,8 +23,23 @@ export function main() {
  */
 
 function dynamicArray(n: number, queries: number[][]): number[] {
-    // Write your code here
+    let lastAnswer = 0;
+    let arr: number[][] = Array(n).fill(null).map(() => []);
+    let answers: number[] = []
 
+    queries.forEach(query => {
+        let [type, x, y] = query
+        let idx = (x ^ lastAnswer) % n
+        if (type === 1) {
+            arr[idx].push(y)
+        } else {
+            let jdx = y % arr[idx].length
+            lastAnswer = arr[idx][jdx]
+            answers.push(lastAnswer)
+        }
+    })
+
+    return answers;
 }
 
 main();
