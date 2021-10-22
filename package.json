@@ -1,0 +1,23 @@
+{
+  "name": "@kylemit/hacker-rank-challenges",
+  "version": "1.0.0",
+  "description": "Hacker Rank Sample Problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleMit/hacker-rank-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KyleMit/hacker-rank-challenges/issues"
+  },
+  "homepage": "https://github.com/KyleMit/hacker-rank-challenges#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.2"
+  }
+}
