@@ -31,18 +31,17 @@ function arrayManipulation(n: number, queries: number[][]): number {
     const slopes = queries.reduce((acc, query) => {
         const [a, b, k] = query;
         acc[a-1] += k
-        if (b < n) {
-            acc[b] -= k
-        }
+        acc[b] -= k
         return acc
-    }, Array(n).fill(0))
-    const runningCount = slopes.reduce((acc, cur) => {
-        let prev = acc[acc.length-1] ?? 0
-        acc.push(prev + cur)
-        return acc
-    }, [])
-    const maxVal = Math.max(...runningCount)
-    return maxVal
+    }, Array(n + 1).fill(0))
+
+    let maxValue = 0
+    let runningCount = 0
+    slopes.forEach(val => {
+        runningCount += val
+        maxValue = Math.max(runningCount, maxValue)
+    })
+    return maxValue
 }
 
 main()
