@@ -50,7 +50,11 @@ export function main() {
  *
  */
 function printLinkedList(head: SinglyLinkedListNode | null): void {
-    // write code
+    let current = head;
+    while (current != null) {
+        console.log(current.data);
+        current = current.next;
+    }
 }
 
 
