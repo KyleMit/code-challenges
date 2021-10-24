@@ -43,8 +43,6 @@ export function main() {
 
 }
 
-// Complete the insertNodeAtHead function below.
-
 /*
  * For your reference:
  *
@@ -54,8 +52,10 @@ export function main() {
  * }
  *
  */
-function insertNodeAtHead(head: SinglyLinkedListNode | null, data: number) {
-    // todo
+function insertNodeAtHead(head: SinglyLinkedListNode | null, data: number): SinglyLinkedListNode {
+    const newHeadNode = new SinglyLinkedListNode(data);
+    newHeadNode.next = head;
+    return newHeadNode;
 }
 
 
