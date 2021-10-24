@@ -17,15 +17,23 @@ export class SinglyLinkedList {
         this.tail = null;
     }
 
-    insertNode(nodeData: number) {
+    insertNode(nodeData: number): void {
         const node = new SinglyLinkedListNode(nodeData);
 
         if (this.head == null) {
             this.head = node;
-        } else if (this.tail != null) {
-            this.tail.next = node;
+        } else {
+            this.tail!.next = node;
         }
 
         this.tail = node;
     }
 };
+
+export function printLinkedList(head: SinglyLinkedListNode | null): void {
+    let current = head;
+    while (current != null) {
+        console.log(current.data);
+        current = current.next;
+    }
+}
