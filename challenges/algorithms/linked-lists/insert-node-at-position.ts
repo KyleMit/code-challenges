@@ -1,4 +1,5 @@
-import { SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+import { listenerCount } from "process";
+import { printLinkedList, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 
 export function main() {
@@ -7,9 +8,9 @@ export function main() {
     myLinkedList.insertNode(13)
     myLinkedList.insertNode(7)
 
-    const result = insertNodeAtPosition(myLinkedList.head, 1, 2);
+    const result = insertNodeAtPosition(myLinkedList, 1, 2);
 
-    console.log(result);
+    printLinkedList(result.head);
 
 }
 
@@ -24,9 +25,26 @@ export function main() {
  */
 
 
-function insertNodeAtPosition(llist, data, position) {
-    // Write your code here
+function insertNodeAtPosition(llist: SinglyLinkedList, data: number, position: number): SinglyLinkedList {
+    const head = llist.head
+    if (head == null) return llist
 
+    let nodeToReplace = head
+    for (let i = 0; i < position - 1; i++) {
+        if (nodeToReplace.next == null) return llist;
+        nodeToReplace = nodeToReplace.next
+    }
+
+    // create new node that continues the link
+    const nextNode = new SinglyLinkedListNode(data)
+
+    // swap previous next into new one
+    nextNode.next = nodeToReplace.next
+
+    // insert new node into current lineup
+    nodeToReplace.next = nextNode
+
+    return llist
 }
 
 main();
