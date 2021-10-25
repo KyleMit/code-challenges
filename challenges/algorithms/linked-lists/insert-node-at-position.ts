@@ -1,4 +1,3 @@
-import { listenerCount } from "process";
 import { printLinkedList, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 
