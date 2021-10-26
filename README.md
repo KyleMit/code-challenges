@@ -42,3 +42,8 @@
 * [ ] Basic Join
 * [ ] Advanced Join
 * [ ] Alternative Queries
+
+
+## Prior Art
+
+[marinskiy/HackerrankPractice](https://github.com/marinskiy/HackerrankPractice)
