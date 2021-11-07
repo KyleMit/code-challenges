@@ -14,7 +14,7 @@ const mergeSortedArrays = (arr1: any[], arr2: any[]): any[] => {
     let j = 0;
 
     // loop until either arr1 or arr2 is empty
-    while (1 < arr1.length && j < arr2.length) {
+    while (i < arr1.length && j < arr2.length) {
         // check for smallest el, push and increment
         if (arr1[i] < arr2[j]) {
             result.push(arr1[i])
