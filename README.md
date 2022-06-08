@@ -1,7 +1,11 @@
 # Code Challenges
 
-* [LeetCode](https://leetcode.com/KyleMit/)
-* [HackerRank](www.hackerrank.com/kylemit)
+* [LeetCode / KyleMit](https://leetcode.com/KyleMit/)
+* [HackerRank / KyleMit](www.hackerrank.com/kylemit)
+
+## Terms
+
+* [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
 
 ## Leet Code
 
