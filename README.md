@@ -1,8 +1,16 @@
-# Hacker Rank Challenges
+# Code Challenges
 
-[HackerRank.com](https://www.hackerrank.com/)
+* [LeetCode](https://leetcode.com/KyleMit/)
+* [HackerRank](www.hackerrank.com/kylemit)
 
-## Data Structures
+## Leet Code
+
+[Data Structure](https://leetcode.com/study-plan/data-structure/)
+[Algorithm](https://leetcode.com/study-plan/algorithm/)
+
+## Hacker Rank
+
+### Data Structures
 
 * [x] Arrays
 * [ ] Linked Lists
@@ -17,7 +25,7 @@
 * [ ] Advanced
 
 
-## Algorithms
+### Algorithms
 
 * [ ] Warmup
 * [ ] Implementation
@@ -34,7 +42,7 @@
 * [ ] NP Complete
 * [ ] Debugging
 
-## SQL
+### SQL
 
 * [ ] Basic Select
 * [ ] Advanced Select
@@ -46,4 +54,4 @@
 
 ## Prior Art
 
-[marinskiy/HackerrankPractice](https://github.com/marinskiy/HackerrankPractice)
+* [marinskiy/HackerrankPractice](https://github.com/marinskiy/HackerrankPractice)
