@@ -25,5 +25,14 @@ export function twoSum2(nums: number[], target: number): number[] {
     return [0,0]
 };
 
+describe('twoSum', function() {
+    it('passes test cases', () => testCases(twoSum))
+})
+describe('twoSum2', function() {
+    it('passes test cases', () => testCases(twoSum2))
+})
 
-twoSum([2,7,11,15], 9) // [0,1]
+function testCases(fn: (nums: number[], target: number) => number[]) {
+    expect(fn([2,7,11,15], 9)).to.deep.equal([0,1]);
+}
+

@@ -16,5 +16,10 @@ export function containsDuplicate(nums: number[]): boolean {
     return false;
 };
 
-containsDuplicate([1,1,2]) // true
-containsDuplicate([1,2,3]) // false
+
+describe('containsDuplicate', function() {
+    it('passes test cases', function() {
+        expect(containsDuplicate([1,1,2])).to.equal(true);
+        expect(containsDuplicate([1,2,3])).to.equal(false);
+    })
+})

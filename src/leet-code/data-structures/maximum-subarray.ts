@@ -31,6 +31,16 @@ export function maxSubArray2(nums: number[]): number {
     return maxSum
 };
 
-maxSubArray([-2,1,-3,4,-1,2,1,-5,4]) // 6
-maxSubArray([1]) // 1
-maxSubArray([5,4,-1,7,8]) // 23
+describe('maxSubArray', function() {
+    it('passes test cases', () => testCases(maxSubArray))
+})
+describe('maxSubArray2', function() {
+    it('passes test cases', () => testCases(maxSubArray2))
+})
+
+function testCases(fn: (nums: number[]) => number) {
+    expect(fn([-2,1,-3,4,-1,2,1,-5,4])).to.equal(6);
+    expect(fn([1])).to.equal(1);
+    expect(fn([5,4,-1,7,8])).to.equal(23);
+}
+

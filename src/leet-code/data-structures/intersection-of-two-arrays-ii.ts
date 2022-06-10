@@ -20,5 +20,9 @@ export function intersect(nums1: number[], nums2: number[]): number[] {
     return result
 };
 
-
-intersect([1,2,2,1], [2,1]) // [2,1]
+describe('intersect', function() {
+    it('passes test cases', function() {
+        expect(intersect([1,2,2,1], [2,1])).to.deep.equal([2,1]);
+        expect(intersect([1,2,2,1], [2,1,3,2])).to.deep.equal([2,1,2]);
+    })
+})

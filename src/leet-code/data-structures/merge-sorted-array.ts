@@ -27,6 +27,9 @@ export function merge(nums1: number[], m: number, nums2: number[], n: number): v
     // return nums1; mutate in-place
 };
 
-
-merge([1,2,3,0,0,0], 3, [2,5,6], 3) // [1,2,2,3,5,6]
-merge([1],1,[],0) // [1]
+describe('merge', function() {
+    it('passes test cases', function() {
+        expect(merge([1,2,3,0,0,0], 3, [2,5,6], 3)).to.deep.equal([1,2,2,3,5,6]);
+        expect(merge([1],1,[],0)).to.deep.equal([1]);
+    })
+})

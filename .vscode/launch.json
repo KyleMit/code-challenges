@@ -17,6 +17,7 @@
                 "ts-node/register",
                 "${relativeFile}"
             ],
+            "internalConsoleOptions": "openOnSessionStart",
             "cwd": "${workspaceRoot}",
             "protocol": "inspector"
         }

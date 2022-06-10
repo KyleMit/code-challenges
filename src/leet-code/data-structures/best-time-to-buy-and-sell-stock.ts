@@ -33,11 +33,14 @@ export function maxProfit2(prices: number[]): number {
     return maxDelta
 };
 
+describe('maxProfit', function() {
+    it('passes test cases', () => testCases(maxProfit))
+})
+describe('maxProfit2', function() {
+    it('passes test cases', () => testCases(maxProfit2))
+})
 
-it('maxProfit', () => test(maxProfit))
-it('maxProfit2', () => test(maxProfit2))
-
-function test(fn: any) {
+function testCases(fn: (prices: number[]) => number) {
     expect(fn([7,1,5,3,6,4])).to.equal(5);
     expect(fn([7,6,4,3,1])).to.equal(0);
 }
