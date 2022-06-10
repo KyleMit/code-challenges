@@ -12,8 +12,10 @@
             "args": [
                 "--no-timeouts",
                 "--require",
+                "chai/register-expect",
+                "--require",
                 "ts-node/register",
-                "${workspaceRoot}/src/**/*.spec.ts"
+                "${relativeFile}"
             ],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector"
