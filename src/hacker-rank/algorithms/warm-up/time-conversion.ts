@@ -1,9 +1,4 @@
-export function main() {
-    timeConversion('12:01:02AM') // "00:01:02"
-
-}
-
-function timeConversion(str: string) {
+export function timeConversion(str: string) {
     let isAM = str.slice(-2) == "AM";
     let [hour, min, sec] = str.slice(0, -2).split(":").map(x=> Number(x));
 
@@ -13,4 +8,8 @@ function timeConversion(str: string) {
     return [hour, min, sec].map(x => String(x).padStart(2, "0")).join(":");
 }
 
-main()
+describe('timeConversion', function() {
+    it('passes test cases', function() {
+        expect(timeConversion('12:01:02AM')).to.equal("00:01:02");
+    })
+})

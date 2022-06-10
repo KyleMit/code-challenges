@@ -33,6 +33,6 @@ describe('twoSum2', function() {
 })
 
 function testCases(fn: (nums: number[], target: number) => number[]) {
-    expect(fn([2,7,11,15], 9)).to.deep.equal([0,1]);
+    expect(fn([2,7,11,15], 9)).to.have.members([0,1]);
 }
 

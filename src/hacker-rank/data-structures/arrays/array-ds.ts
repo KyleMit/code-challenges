@@ -1,20 +1,8 @@
-export function main() {
-
-    const arr = [1,2,3]
-    const res = reverseArray(arr);
-
-    console.log(res);
+export function reverseArray(arr: number[]): number[] {
+    return arr.reverse();
 }
 
-/*
- * Complete the 'reverseArray' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts INTEGER_ARRAY a as parameter.
- */
-
-function reverseArray(arr: number[]): number[] {
-    // return a.reverse();
+export function reverseArray2(arr: number[]): number[] {
     const len = arr.length;
     return arr.reduce((acc, val, i) => {
         acc[len - i - 1] = val;
@@ -22,4 +10,15 @@ function reverseArray(arr: number[]): number[] {
     }, new Array(len));
 }
 
-main();
+
+describe('reverseArray', function() {
+    it('passes test cases', () => testCases(reverseArray))
+})
+describe('reverseArray2', function() {
+    it('passes test cases', () => testCases(reverseArray2))
+})
+
+
+function testCases(fn: (arr: number[]) => number[]) {
+    expect(fn([1,2,3])).to.deep.equal([3,2,1]);
+}

@@ -1,8 +1,4 @@
-export function main() {
-    plusMinus([1,1,0,-1,-1]) // [0.400000, 0.400000, 0.200000]
-}
-
-function plusMinus(arr: number[]) {
+export function plusMinus(arr: number[]) {
     let proportions = arr.reduce((acc, cur, i) => {
         if (cur > 0) {
             acc.positive++
@@ -25,9 +21,11 @@ function plusMinus(arr: number[]) {
         proportions.zero / proportions.size
     ]
 
-    percents.forEach(val => {
-        console.log(val);
-    })
+    return percents
 }
 
-main()
+describe('plusMinus', function() {
+    it('passes test cases', function() {
+        expect(plusMinus([1,1,0,-1,-1])).to.deep.equal([0.4, 0.4, 0.2]);
+    })
+})

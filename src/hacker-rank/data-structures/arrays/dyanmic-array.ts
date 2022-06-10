@@ -1,28 +1,4 @@
-export function main() {
-
-    const n = 2
-    const queries = [
-        [ 1, 0, 5 ],
-        [ 1, 1, 7 ],
-        [ 1, 0, 3 ],
-        [ 2, 1, 0 ],
-        [ 2, 1, 1 ]
-    ]
-    const result: number[] = dynamicArray(n, queries);
-    console.log(result)
-}
-
-
-/*
- * Complete the 'dynamicArray' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER n
- *  2. 2D_INTEGER_ARRAY queries
- */
-
-function dynamicArray(n: number, queries: number[][]): number[] {
+export function dynamicArray(n: number, queries: number[][]): number[] {
     let lastAnswer = 0;
     let arr: number[][] = Array(n).fill(null).map(() => []);
     let answers: number[] = []
@@ -42,4 +18,18 @@ function dynamicArray(n: number, queries: number[][]): number[] {
     return answers;
 }
 
-main();
+describe('dynamicArray', function() {
+    it('passes test cases', function() {
+        const n = 2
+        const queries = [
+            [ 1, 0, 5 ],
+            [ 1, 1, 7 ],
+            [ 1, 0, 3 ],
+            [ 2, 1, 0 ],
+            [ 2, 1, 1 ]
+        ]
+        const result = dynamicArray(n, queries);
+        expect(result).to.deep.equal([ 7, 3 ]);
+    })
+})
+

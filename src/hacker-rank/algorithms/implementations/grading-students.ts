@@ -1,8 +1,4 @@
-export function main() {
-    gradingStudents([73, 67, 38, 33]) // [75, 67, 40, 33]
-}
-
-function gradingStudents(grades: number[]) {
+export function gradingStudents(grades: number[]) {
     return grades.map(grade => {
         if (grade < 38) { return grade }
         let mod = grade % 5
@@ -12,4 +8,8 @@ function gradingStudents(grades: number[]) {
 
 }
 
-main();
+describe('gradingStudents', function() {
+    it('passes test cases', function() {
+        expect(gradingStudents([73, 67, 38, 33])).to.have.members([75, 67, 40, 33]);
+    })
+})

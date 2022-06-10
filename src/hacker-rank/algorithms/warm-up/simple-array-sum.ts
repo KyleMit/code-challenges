@@ -1,9 +1,10 @@
-export function main() {
-    simpleArraySum([1,2,3]) // 6
-}
-
-function simpleArraySum(arr: number[]): number {
+export function simpleArraySum(arr: number[]): number {
     return arr.reduce((acc, cur) => acc + cur, 0)
 }
 
-main()
+
+describe('simpleArraySum', function() {
+    it('passes test cases', function() {
+        expect(simpleArraySum([1,2,3])).to.equal(6);
+    })
+})

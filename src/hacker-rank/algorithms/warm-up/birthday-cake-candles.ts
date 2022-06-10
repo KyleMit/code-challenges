@@ -1,8 +1,4 @@
-export function main() {
-    birthdayCakeCandles([3, 2, 1, 3]) // 2
-}
-
-function birthdayCakeCandles(candles: number[]) {
+export function birthdayCakeCandles(candles: number[]) {
     let maxHeight = 0, maxHeightCount = 0
     candles.forEach(val => {
         if (val > maxHeight) {
@@ -17,4 +13,8 @@ function birthdayCakeCandles(candles: number[]) {
 }
 
 
-main()
+describe('birthdayCakeCandles', function() {
+    it('passes test cases', function() {
+        expect(birthdayCakeCandles([3, 2, 1, 3])).to.equal(2);
+    })
+})

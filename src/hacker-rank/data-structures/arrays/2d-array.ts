@@ -1,28 +1,4 @@
-export function main() {
-    let arr = [
-        [1, 1, 1, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [1, 1, 1, 0, 0, 0],
-        [0, 0, 2, 4, 4, 0],
-        [0, 0, 0, 2, 0, 0],
-        [0, 0, 1, 2, 4, 0]
-    ];
-
-    const result: number = hourglassSum(arr);
-
-    console.log(result)
-}
-
-let sum = (arr: number[]) => arr.reduce((a, b) => a + b, 0)
-let flatten = (arr: any[][]): any[] => arr.reduce((acc, val) => acc.concat(val), []);
-
-/*
- * Complete the 'hourglassSum' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts 2D_INTEGER_ARRAY arr as parameter.
- */
-function hourglassSum(arr: number[][]): number {
+export function hourglassSum(arr: number[][]): number {
     const size = arr.length - 2;
     const glasses = new Array(size).fill(null).map((_, row) => {
         return new Array(size).fill(null).map((_, col) => {
@@ -38,4 +14,20 @@ function hourglassSum(arr: number[][]): number {
     return maxSum
 }
 
-main();
+let sum = (arr: number[]) => arr.reduce((a, b) => a + b, 0)
+let flatten = (arr: any[][]): any[] => arr.reduce((acc, val) => acc.concat(val), []);
+
+
+describe('hourglassSum', function() {
+    it('passes test cases', function() {
+        let arr = [
+            [1, 1, 1, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0],
+            [1, 1, 1, 0, 0, 0],
+            [0, 0, 2, 4, 4, 0],
+            [0, 0, 0, 2, 0, 0],
+            [0, 0, 1, 2, 4, 0]
+        ];
+        expect(hourglassSum(arr)).to.equal(19);
+    })
+})
