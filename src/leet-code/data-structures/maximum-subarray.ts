@@ -25,7 +25,7 @@ export function maxSubArray2(nums: number[]): number {
     let maxSum = nums[0]; // max so far
     for (let i = 1; i < nums.length; i++) {
         const n = nums[i]
-        curSum = Math.max(curSum, curSum + n)
+        curSum = Math.max(n, curSum + n)
         maxSum = Math.max(maxSum, curSum)
     }
     return maxSum
