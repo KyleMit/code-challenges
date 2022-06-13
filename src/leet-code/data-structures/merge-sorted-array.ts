@@ -24,12 +24,19 @@ export function merge(nums1: number[], m: number, nums2: number[], n: number): v
         }
     }
 
-    // return nums1; mutate in-place
+    // return nums1; // mutate in-place
 };
 
-describe('merge', function() {
-    it('passes test cases', function() {
-        expect(merge([1,2,3,0,0,0], 3, [2,5,6], 3)).to.deep.equal([1,2,2,3,5,6]);
-        expect(merge([1],1,[],0)).to.deep.equal([1]);
+describe('mergeSortedArrays', function() {
+    it('merges regular arrays', function() {
+        var nums1 = [1,2,3,0,0,0]
+        merge(nums1, 3, [2,5,6], 3)
+        expect(nums1).to.deep.equal([1,2,2,3,5,6]);
+    })
+    it('merges small arrays', function() {
+        var nums1 = [1]
+        merge(nums1,1,[],0)
+        expect(nums1).to.deep.equal([1]);
     })
 })
+
