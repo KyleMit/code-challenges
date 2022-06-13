@@ -1,7 +1,8 @@
+// https://www.hackerrank.com/challenges/simple-array-sum/problem
+
 export function simpleArraySum(arr: number[]): number {
     return arr.reduce((acc, cur) => acc + cur, 0)
 }
-
 
 describe('simpleArraySum', function() {
     it('passes test cases', function() {

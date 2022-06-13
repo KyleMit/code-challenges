@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/staircase/problem
+
 export function staircase(n: number) {
     let stairs = Array.from({length: n}, (_, i) => {
         return " ".repeat(n - i - 1) + "#".repeat(i + 1)

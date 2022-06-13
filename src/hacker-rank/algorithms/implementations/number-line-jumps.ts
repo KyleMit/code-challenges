@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/kangaroo/problem
+
 export function kangaroo(x1: number, v1: number, x2: number, v2: number): string {
     // velocity must be an increment of start delta
     const startDelta = Math.abs(x1 - x2);   // | 0 - 4 | = 4

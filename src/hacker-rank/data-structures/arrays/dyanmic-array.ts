@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/dynamic-array
+
 export function dynamicArray(n: number, queries: number[][]): number[] {
     let lastAnswer = 0;
     let arr: number[][] = Array(n).fill(null).map(() => []);

@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/arrays-ds/problem
+
 export function reverseArray(arr: number[]): number[] {
     return arr.reverse();
 }

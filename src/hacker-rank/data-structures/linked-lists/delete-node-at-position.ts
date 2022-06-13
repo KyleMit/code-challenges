@@ -1,5 +1,6 @@
-import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+// https://www.hackerrank.com/challenges/delete-a-node-from-a-linked-list/
 
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 export function deleteNode(head: SinglyLinkedListNode, position: number): SinglyLinkedListNode {
     if (position == 0) return head.next!;

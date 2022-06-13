@@ -1,5 +1,6 @@
-import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+// https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/
 
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 export function insertNodeAtPosition(llist: SinglyLinkedList, data: number, position: number): SinglyLinkedList {
     const head = llist.head

@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/grading/problem
+
 export function gradingStudents(grades: number[]) {
     return grades.map(grade => {
         if (grade < 38) { return grade }

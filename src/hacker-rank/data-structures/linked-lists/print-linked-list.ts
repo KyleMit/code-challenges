@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/
+
 import { SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 import sinon, { SinonStub } from "sinon";
 

@@ -1,5 +1,6 @@
-import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+// https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/
 
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 export function main() {
 

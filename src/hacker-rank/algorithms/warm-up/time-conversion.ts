@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/time-conversion/problem
+
 export function timeConversion(str: string) {
     let isAM = str.slice(-2) == "AM";
     let [hour, min, sec] = str.slice(0, -2).split(":").map(x=> Number(x));

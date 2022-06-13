@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/2d-array/problem
+
 export function hourglassSum(arr: number[][]): number {
     const size = arr.length - 2;
     const glasses = new Array(size).fill(null).map((_, row) => {

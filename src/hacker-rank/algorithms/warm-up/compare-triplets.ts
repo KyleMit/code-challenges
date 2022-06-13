@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/compare-the-triplets/problem
+
 export function compareTriplets(a: number[], b: number[]): [number, number] {
     return Array(a.length).fill(null).reduce((acc, cur, i) => {
         if (a[i] === b[i]) return acc;

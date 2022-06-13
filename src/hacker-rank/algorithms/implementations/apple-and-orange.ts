@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/apple-and-orange/problem
+
 export function countApplesAndOranges(
     houseStart: number,
     houseEnd: number,

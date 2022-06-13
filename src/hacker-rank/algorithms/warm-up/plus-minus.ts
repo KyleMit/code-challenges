@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/plus-minus/problem
+
 export function plusMinus(arr: number[]) {
     let proportions = arr.reduce((acc, cur, i) => {
         if (cur > 0) {

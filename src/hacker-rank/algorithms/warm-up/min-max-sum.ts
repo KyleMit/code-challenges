@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/challenges/mini-max-sum/problem
 
 export function miniMaxSum(arr: number[]): number[] {
     let sorted = arr.sort()

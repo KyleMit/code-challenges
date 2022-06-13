@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/crush/
+
 export function arrayManipulation(n: number, queries: number[][]): number {
     const slopes = queries.reduce((acc, query) => {
         const [a, b, k] = query;

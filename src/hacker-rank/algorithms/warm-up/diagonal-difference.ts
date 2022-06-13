@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/diagonal-difference/problem
+
 export function diagonalDifference(arr: number[][]) {
     let size = arr.length;
     let diff = arr.reduce((acc, row, i) => {

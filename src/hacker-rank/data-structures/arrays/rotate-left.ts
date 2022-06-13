@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/array-left-rotation
+
 export function rotateLeft(d: number, arr: number[]): number[] {
    return [...arr.splice(d), ...arr]
 }

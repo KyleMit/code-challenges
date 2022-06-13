@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/sparse-arrays/
+
 export function matchingStrings(strings: string[], queries: string[]): number[] {
     const stringMap = strings.reduce<Record<string, number>>((acc, cur) => {
         acc[cur] = typeof acc[cur] == "number" ? acc[cur] + 1 : 1

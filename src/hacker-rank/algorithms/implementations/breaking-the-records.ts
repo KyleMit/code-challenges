@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+
 export function breakingRecords(scores: number[]): number[] {
     let records = scores.reduce((acc, cur) => {
         if (cur > acc.maxScore) {

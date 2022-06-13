@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+
 export function birthdayCakeCandles(candles: number[]) {
     let maxHeight = 0, maxHeightCount = 0
     candles.forEach(val => {
