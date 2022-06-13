@@ -30,10 +30,13 @@ export class SinglyLinkedList {
     }
 };
 
-export function printLinkedList(head: SinglyLinkedListNode | null): void {
+export function linkedListToArray(head: SinglyLinkedListNode | null): number[] {
     let current = head;
+    let output = [];
     while (current != null) {
-        console.log(current.data);
+        output.push(current.data);
         current = current.next;
     }
+    return output;
 }
+

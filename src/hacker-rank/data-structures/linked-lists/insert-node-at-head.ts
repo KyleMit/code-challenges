@@ -1,4 +1,4 @@
-import { SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 
 export function main() {
@@ -14,15 +14,6 @@ export function main() {
 
 }
 
-/*
- * For your reference:
- *
- * SinglyLinkedListNode {
- *     int data;
- *     SinglyLinkedListNode next;
- * }
- *
- */
 function insertNodeAtHead(head: SinglyLinkedListNode | null, data: number): SinglyLinkedListNode {
     const newHeadNode = new SinglyLinkedListNode(data);
     newHeadNode.next = head;
@@ -30,4 +21,15 @@ function insertNodeAtHead(head: SinglyLinkedListNode | null, data: number): Sing
 }
 
 
-main()
+describe('insertNodeAtHead', function() {
+    it('passes test cases', function() {
+        const myLinkedList = new SinglyLinkedList()
+        myLinkedList.insertNode(16)
+        myLinkedList.insertNode(13)
+
+        const result = insertNodeAtHead(myLinkedList.head, 3);
+
+        expect(linkedListToArray(result)).to.deep.equal([ 3, 16, 13 ]);
+    })
+})
+

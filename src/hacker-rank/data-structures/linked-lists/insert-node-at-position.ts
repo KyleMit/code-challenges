@@ -1,30 +1,7 @@
-import { printLinkedList, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
 
 
-export function main() {
-    const myLinkedList = new SinglyLinkedList()
-    myLinkedList.insertNode(16)
-    myLinkedList.insertNode(13)
-    myLinkedList.insertNode(7)
-
-    const result = insertNodeAtPosition(myLinkedList, 1, 2);
-
-    printLinkedList(result.head);
-
-}
-
-/*
- * Complete the 'insertNodeAtPosition' function below.
- *
- * The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
- * The function accepts following parameters:
- *  1. INTEGER_SINGLY_LINKED_LIST llist
- *  2. INTEGER data
- *  3. INTEGER position
- */
-
-
-function insertNodeAtPosition(llist: SinglyLinkedList, data: number, position: number): SinglyLinkedList {
+export function insertNodeAtPosition(llist: SinglyLinkedList, data: number, position: number): SinglyLinkedList {
     const head = llist.head
     if (head == null) return llist
 
@@ -46,4 +23,16 @@ function insertNodeAtPosition(llist: SinglyLinkedList, data: number, position: n
     return llist
 }
 
-main();
+describe('insertNodeAtPosition', function() {
+    it('passes test cases', function() {
+        const myLinkedList = new SinglyLinkedList()
+        myLinkedList.insertNode(16)
+        myLinkedList.insertNode(13)
+        myLinkedList.insertNode(7)
+
+        const result = insertNodeAtPosition(myLinkedList, 1, 2);
+
+        expect(linkedListToArray(result.head)).to.deep.equal([ 16, 13, 1, 7 ]);
+    })
+})
+
