@@ -9,7 +9,7 @@ Space Complexity: O(1)
 * continue these passes until the array is sorted
 */
 
-export const bubbleSort = (arr: any[]) => {
+export const bubbleSort = (arr: any[]): any[] => {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
             let cur = arr[j], next = arr[j+1]
@@ -23,7 +23,7 @@ export const bubbleSort = (arr: any[]) => {
     return arr;
 }
 
-export const bubbleSortCheckSwaps = (arr: any[]) => {
+export const bubbleSortCheckSwaps = (arr: any[]): any[] => {
     let noSwaps;
     for (let i = arr.length; i > 0; i--) {
         noSwaps = true;
@@ -37,4 +37,15 @@ export const bubbleSortCheckSwaps = (arr: any[]) => {
         if (noSwaps) return arr;
     }
     return arr;
+}
+
+describe('bubbleSort', function() {
+    it('passes test cases', () => testCases(bubbleSort))
+})
+describe('bubbleSortCheckSwaps', function() {
+    it('passes test cases', () => testCases(bubbleSortCheckSwaps))
+})
+
+function testCases(fn: (arr: any[]) => any[]) {
+    expect(fn([1,3,2])).to.deep.equal([1,2,3]);
 }

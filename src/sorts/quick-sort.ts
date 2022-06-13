@@ -44,4 +44,11 @@ const quickSortRecurse = (arr: any[], left: number, right: number): any[] => {
 }
 
 export const quickSort = (arr: any[]): any[] =>
-    quickSortRecurse(arr, 0, arr.length - 1)
+    quickSortRecurse(arr, 0, arr.length - 1);
+
+
+describe("quickSort", function() {
+    it('should return simple array in order', function() {
+        expect(quickSort([1,3,2])).to.deep.equal([1,2,3]);
+    })
+})

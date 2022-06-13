@@ -48,3 +48,9 @@ export const mergeSort = (arr: any[]): any[] => {
 
     return mergeSortedArrays(left, right);
 }
+
+describe("mergeSort", function() {
+    it('should return simple array in order', function() {
+        expect(mergeSort([1,3,2])).to.deep.equal([1,2,3]);
+    })
+})
