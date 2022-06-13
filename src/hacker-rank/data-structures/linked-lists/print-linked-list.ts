@@ -1,5 +1,5 @@
 import { SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
-import sinon from "sinon";
+import sinon, { SinonStub } from "sinon";
 
 function printLinkedList(head: SinglyLinkedListNode | null): void {
     let current = head;
@@ -12,10 +12,15 @@ function printLinkedList(head: SinglyLinkedListNode | null): void {
 
 describe('printLinkedList', function() {
 
+    let logStub: SinonStub;
+    beforeEach(() => {
+        logStub = sinon.stub(console, "log").returns();
+    })
+    afterEach(() => {
+        logStub.restore();
+    })
+
     it('passes test cases', function() {
-
-        const logStub = sinon.stub(console, "log").returns();
-
         const myLinkedList = new SinglyLinkedList()
         myLinkedList.insertNode(16)
         myLinkedList.insertNode(13)
@@ -24,8 +29,6 @@ describe('printLinkedList', function() {
 
         expect(logStub.calledWith(16)).to.be.true
         expect(logStub.calledWith(13)).to.be.true
-
-        logStub.restore();
     })
 })
 
