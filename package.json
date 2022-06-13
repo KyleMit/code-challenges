@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hacker Rank Sample Problems",
   "scripts": {
-    "test": "mocha --require chai/register-expect --require ts-node/register src/**/*.ts"
+    "test": "mocha --no-deprecation --require chai/register-expect --require ts-node/register src/**/*.ts"
   },
   "repository": {
     "type": "git",

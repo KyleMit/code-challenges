@@ -9,6 +9,9 @@
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "runtimeArgs": [
+                "--no-deprecation"
+            ],
             "args": [
                 "--no-timeouts",
                 "--require",
@@ -18,8 +21,7 @@
                 "${relativeFile}"
             ],
             "internalConsoleOptions": "openOnSessionStart",
-            "cwd": "${workspaceRoot}",
-            "protocol": "inspector"
+            "cwd": "${workspaceRoot}"
         }
     ]
 }
