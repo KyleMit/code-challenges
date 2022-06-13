@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/KyleMit/hacker-rank-challenges.git"
   },
-  "keywords": [],
+  "keywords": ["algorithms","leetcode","hackerrank","data-structures","leetcode-solutions","hackerrank-solutions"],
   "author": "Kyle Mit",
   "license": "MIT",
   "bugs": {
