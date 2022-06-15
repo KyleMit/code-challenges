@@ -3,10 +3,6 @@
 * [LeetCode / KyleMit](https://leetcode.com/KyleMit/)
 * [HackerRank / KyleMit](www.hackerrank.com/kylemit)
 
-## Terms
-
-* [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
-
 ## Leet Code
 
 [Data Structure](https://leetcode.com/study-plan/data-structure/)
@@ -59,3 +55,11 @@
 ## Prior Art
 
 * [marinskiy/HackerrankPractice](https://github.com/marinskiy/HackerrankPractice)
+
+
+## Wiki
+
+* [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+* [Sentinel value](https://en.wikipedia.org/wiki/Sentinel_value)
+* [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+* [Graph traversal](https://en.wikipedia.org/wiki/Graph_traversal)
