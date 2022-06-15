@@ -30,16 +30,21 @@ export function removeElements2(head: ListNode | null, val: number): ListNode | 
 };
 
 describe('removeElements', function() {
-    it('passes test cases', function() {
-        expect(zipRemoveUnZip([1,2,6,3,4,5,6], 6)).to.deep.equal([1,2,3,4,5]);
-        expect(zipRemoveUnZip([], 1)).to.deep.equal([]);
-        expect(zipRemoveUnZip([7,7,7,7], 7)).to.deep.equal([]);
-    })
+    it('passes test cases', () => testCases(removeElements))
+})
+describe('removeElements2', function() {
+    it('passes test cases', () => testCases(removeElements2))
 })
 
+function testCases(fn: (head: ListNode | null, val: number) => ListNode | null) {
+    expect(zipFuncUnZip([1,2,6,3,4,5,6], 6, fn)).to.deep.equal([1,2,3,4,5]);
+    expect(zipFuncUnZip([], 1, fn)).to.deep.equal([]);
+    expect(zipFuncUnZip([7,7,7,7], 7, fn)).to.deep.equal([]);
+}
 
-function zipRemoveUnZip(arr1: number[], target: number) {
+
+function zipFuncUnZip(arr1: number[], target: number, fn: (head: ListNode | null, val: number) => ListNode | null): number[] {
     const ll1 = LinkedList.fromArray(arr1);
-    const result = removeElements(ll1, target)
+    const result = fn(ll1, target)
     return LinkedList.toArray(result);
 }

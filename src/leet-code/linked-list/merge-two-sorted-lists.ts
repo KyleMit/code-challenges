@@ -53,15 +53,15 @@ describe('mergeTwoLists2', function() {
 })
 
 function testCases(fn: (list1: ListNode | null, list2: ListNode | null) => ListNode | null) {
-    expect(zipMergeUnZip([1,2,4], [1,3,4])).to.deep.equal([1,1,2,3,4,4]);
-        expect(zipMergeUnZip([], [])).to.deep.equal([]);
-        expect(zipMergeUnZip([], [0])).to.deep.equal([0]);
+    expect(zipFuncUnZip([1,2,4], [1,3,4], fn)).to.deep.equal([1,1,2,3,4,4]);
+    expect(zipFuncUnZip([], [], fn)).to.deep.equal([]);
+    expect(zipFuncUnZip([], [0], fn)).to.deep.equal([0]);
 }
 
 
-function zipMergeUnZip(arr1: number[], arr2: number[]) {
+function zipFuncUnZip(arr1: number[], arr2: number[], fn: (list1: ListNode | null, list2: ListNode | null) => ListNode | null): number[] {
     const ll1 = LinkedList.fromArray(arr1);
     const ll2 = LinkedList.fromArray(arr2);
-    const result = mergeTwoLists(ll1, ll2)
+    const result = fn(ll1, ll2)
     return LinkedList.toArray(result);
 }
