@@ -29,3 +29,12 @@ export class LinkedList {
         return arr;
     }
 }
+
+describe('LinkedList', function() {
+    it('passes test cases', function() {
+        const backAndForth = (arr: number[]) => LinkedList.toArray(LinkedList.fromArray(arr))
+        expect(backAndForth([1,1,2])).to.deep.equal([1,1,2]);
+        expect(backAndForth([1])).to.deep.equal([1]);
+        expect(backAndForth([])).to.deep.equal([]);
+    })
+})

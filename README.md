@@ -5,8 +5,8 @@
 
 ## Leet Code
 
-[Data Structure](https://leetcode.com/study-plan/data-structure/)
-[Algorithm](https://leetcode.com/study-plan/algorithm/)
+* [Data Structure Course](https://leetcode.com/study-plan/data-structure/)
+* [Algorithm Course](https://leetcode.com/study-plan/algorithm/)
 
 ## Hacker Rank
 
@@ -57,9 +57,12 @@
 * [marinskiy/HackerrankPractice](https://github.com/marinskiy/HackerrankPractice)
 
 
-## Wiki
+## Resources
 
 * [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
 * [Sentinel value](https://en.wikipedia.org/wiki/Sentinel_value)
 * [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 * [Graph traversal](https://en.wikipedia.org/wiki/Graph_traversal)
+* [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
+* [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
+* [Tree Traversals (Inorder, Preorder and Postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder)
