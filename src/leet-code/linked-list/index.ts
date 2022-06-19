@@ -1,3 +1,12 @@
+export class ListNodeGeneric<T> {
+    val: T | null
+    next: ListNodeGeneric<T> | null
+    constructor(val?: T, next?: ListNodeGeneric<T>) {
+        this.val = val ?? null
+        this.next = next ?? null
+    }
+}
+
 export class ListNode {
     val: number
     next: ListNode | null
