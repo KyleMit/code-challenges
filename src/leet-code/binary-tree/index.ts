@@ -1,21 +1,3 @@
-/*
-      1
-     / \
-    2   3
-   / \
-  4   5
-
-Depth First
-* In-Order   (left, root, right) - 4 2 5 1 3
-* Pre-Order  (root, left, right) - 1 2 4 5 3
-* Post-Order (left, right, root) - 4 5 2 3 1
-
-Breadth First
-Level-Order - 1 2 3 4 5
-
-![example](https://i.imgur.com/uDIBxoT.png)
-*/
-
 
 export class TreeNode {
     val: number
@@ -30,6 +12,7 @@ export class TreeNode {
 
 
 export class BinaryTree {
+    static parseLevelOrderArray = (arr: number[]) => this.fromLevelOrderArray(arr)
     static fromLevelOrderArray(arr: number[], i = 0): TreeNode | null {
         //if (!arr?.length) return null;
         let root = null
@@ -41,13 +24,9 @@ export class BinaryTree {
         return root
     }
 
+    static traverseTreeInLevelOrder = (root: TreeNode | null) => this.toLevelOrderArray(root)
     static toLevelOrderArray(root: TreeNode | null): number[] {
         const arr: number[] = []
-
-        const height = (node: TreeNode | null): number => {
-            if (!node) return 0
-            return Math.max(height(node.left), height(node.right)) + 1
-        }
 
         const addCurrentLevel = (node: TreeNode | null, level: number) => {
             if (!node) return
@@ -59,23 +38,28 @@ export class BinaryTree {
             }
         }
 
-        var h = height(root);
-        for (let i = 1; i<=h; i++) {
+        var levels = this.height(root);
+        for (let i = 1; i<=levels; i++) {
             addCurrentLevel(root, i)
         }
 
         return arr;
     }
+
+    static toPreOrderArray(root: TreeNode | null): number[] {
+        const arr: number[] = []
+        // TODO
+        return arr;
+    }
+
+    static height(node: TreeNode | null): number {
+        if (!node) return 0
+        return Math.max(this.height(node.left), this.height(node.right)) + 1
+    }
+
+    static format(root: TreeNode | null): string {
+
+        return ""
+    }
 }
 
-describe('BinaryTree', function() {
-    describe('Level Order Traversal', function() {
-        it('passes test cases', function() {
-            const backAndForth = (arr: number[]) => BinaryTree.toLevelOrderArray(BinaryTree.fromLevelOrderArray(arr))
-            expect(backAndForth([])).to.deep.equal([]);
-            expect(backAndForth([1])).to.deep.equal([1]);
-            expect(backAndForth([1,1,2])).to.deep.equal([1,1,2]);
-            expect(backAndForth([1,2,3,4,5,6,7,8])).to.deep.equal([1,2,3,4,5,6,7,8]);
-        })
-    })
-})

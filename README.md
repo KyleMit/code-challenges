@@ -59,10 +59,13 @@
 
 ## Resources
 
-* [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
-* [Sentinel value](https://en.wikipedia.org/wiki/Sentinel_value)
-* [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-* [Graph traversal](https://en.wikipedia.org/wiki/Graph_traversal)
-* [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
-* [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
-* [Tree Traversals (Inorder, Preorder and Postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder)
+* Wikipedia
+  * [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+  * [Sentinel value](https://en.wikipedia.org/wiki/Sentinel_value)
+  * [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+  * [Graph traversal](https://en.wikipedia.org/wiki/Graph_traversal)
+  * [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
+  * [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
+  * [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
+* Geeks for Geeks
+  * [Tree Traversals (Inorder, Preorder and Postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder)
