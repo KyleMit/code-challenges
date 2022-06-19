@@ -1,6 +1,6 @@
 // https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/
 
-import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from ".";
 
 function insertNodeAtHead(head: SinglyLinkedListNode | null, data: number): SinglyLinkedListNode {
     const newHeadNode = new SinglyLinkedListNode(data);

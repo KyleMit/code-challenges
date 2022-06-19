@@ -1,7 +1,7 @@
 // https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem
 
 
-import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from "./_utils";
+import { linkedListToArray, SinglyLinkedList, SinglyLinkedListNode } from ".";
 
 function insertNodeAtTail(head: SinglyLinkedListNode | null, data: number): SinglyLinkedListNode {
     if (head == null){
