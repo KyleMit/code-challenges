@@ -89,9 +89,9 @@ export class BinaryTree {
         return Math.max(this.height(node.left), this.height(node.right)) + 1
     }
 
-    static format(root: TreeNode | null): string {
+    // static format(root: TreeNode | null): string {
 
-        return ""
-    }
+    //     return ""
+    // }
 }
 

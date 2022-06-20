@@ -20,8 +20,8 @@ describe('BinaryTree', function() {
         })
     })
 
-    describe('Print Binary Tree', function() {
-        let printTree = (arr: number[]): string => BinaryTree.format(BinaryTree.fromLevelOrderArray(arr))
+//     describe('Print Binary Tree', function() {
+//         let printTree = (arr: number[]): string => BinaryTree.format(BinaryTree.fromLevelOrderArray(arr))
 
 //         it('prints simple tree', function() {
 //             var input = [1,2,3]
@@ -31,5 +31,5 @@ describe('BinaryTree', function() {
 // 2   3`
 //             expect(printTree(input)).to.equal(expected);
 //         })
-    })
+//     })
 })

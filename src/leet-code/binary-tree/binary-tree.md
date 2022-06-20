@@ -25,3 +25,14 @@
 
 * [Construct a complete binary tree from given array in level order fashion](https://www.geeksforgeeks.org/construct-complete-binary-tree-given-array)
 * [Level Order Binary Tree Traversal](https://www.geeksforgeeks.org/level-order-tree-traversal)
+
+
+## Binary Search Tree
+
+Binary Search Tree is a binary tree where the key in each node
+
+* is greater than any key stored in the left sub-tree,
+* and less than any key stored in the right sub-tree.
+
+![example](https://i.imgur.com/Wd1780X.png)
+

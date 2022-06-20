@@ -65,6 +65,7 @@
   * [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
   * [Graph traversal](https://en.wikipedia.org/wiki/Graph_traversal)
   * [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
+  * [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)
   * [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
   * [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
 * Geeks for Geeks
