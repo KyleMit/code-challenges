@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/submissions/
+// https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
 
 // n contiguous elements from left
 // plus
