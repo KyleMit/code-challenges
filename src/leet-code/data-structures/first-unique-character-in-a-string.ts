@@ -67,7 +67,7 @@ describe('firstUniqChar4', function() {
 })
 
 function testCases(fn: (s: string) => number) {
-    expect(firstUniqChar("leetcode")).to.equal(0);
-    expect(firstUniqChar("loveleetcode")).to.equal(2);
-    expect(firstUniqChar("aabb")).to.equal(-1);
+    expect(fn("leetcode")).to.equal(0);
+    expect(fn("loveleetcode")).to.equal(2);
+    expect(fn("aabb")).to.equal(-1);
 }

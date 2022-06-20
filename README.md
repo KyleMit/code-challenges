@@ -68,5 +68,6 @@
   * [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)
   * [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
   * [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
+  * [Lowest common ancestor (LCA)](https://en.wikipedia.org/wiki/Lowest_common_ancestor)
 * Geeks for Geeks
   * [Tree Traversals (Inorder, Preorder and Postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder)
