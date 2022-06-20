@@ -7,12 +7,13 @@ export function reverse(x: number): number {
 };
 
 describe('reverse', function() {
+    const testCases = (fn: (x: number) => number) => {
+        expect(fn(123)).to.equal(321);
+        expect(fn(-123)).to.equal(-321);
+        expect(fn(120)).to.equal(21);
+        expect(fn(Math.pow(2,31) + 1)).to.equal(0);
+    }
+
     it('passes test cases', () => testCases(reverse))
 })
 
-function testCases(fn: (x: number) => number) {
-    expect(fn(123)).to.equal(321);
-    expect(fn(-123)).to.equal(-321);
-    expect(fn(120)).to.equal(21);
-    expect(fn(Math.pow(2,31) + 1)).to.equal(0);
-}
