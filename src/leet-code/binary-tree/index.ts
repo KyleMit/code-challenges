@@ -14,13 +14,45 @@ export class TreeNode {
 export class BinaryTree {
     static parseLevelOrderArray = (arr: number[]) => this.fromLevelOrderArray(arr)
     static fromLevelOrderArray(arr: number[], i = 0): TreeNode | null {
-        //if (!arr?.length) return null;
         let root = null
         if (i < arr.length) {
             root = new TreeNode(arr[i])
             root.left = this.fromLevelOrderArray(arr, 2 * i + 1)
             root.right = this.fromLevelOrderArray(arr, 2 * i + 2)
         }
+        return root
+    }
+
+    static fromNullableLevelOrderArray(arr: Array<number | null>): TreeNode | null {
+        if (!arr.length) return null;
+
+        let curLevel: TreeNode[] = []
+        let nextLevel: TreeNode[] = []
+
+        let values = arr.reverse();
+
+        // base case
+        const root = new TreeNode(values.pop()!)
+        curLevel.push(root)
+
+        const maybeTreeNode = (val: number | null | undefined) => (val != null) ? new TreeNode(val) : null;
+
+        while (values.length) {
+            // go through values in curLevel
+            for (let i=0; i<curLevel.length; i++) {
+                const curNode = curLevel[i]
+
+                // fill children for current level
+                curNode.left = maybeTreeNode(values.pop())
+                curNode.right = maybeTreeNode(values.pop())
+
+                // add to queue for next level to fill
+                if (curNode.left) nextLevel.push(curNode.left)
+                if (curNode.right) nextLevel.push(curNode.right)
+            }
+            curLevel = nextLevel
+        }
+
         return root
     }
 
