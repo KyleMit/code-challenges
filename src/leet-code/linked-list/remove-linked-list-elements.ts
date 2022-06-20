@@ -37,14 +37,15 @@ describe('removeElements2', function() {
 })
 
 function testCases(fn: (head: ListNode | null, val: number) => ListNode | null) {
+    const zipFuncUnZip = (arr1: number[], target: number, fn: (head: ListNode | null, val: number) => ListNode | null): number[] => {
+        const ll1 = LinkedList.fromArray(arr1);
+        const result = fn(ll1, target)
+        return LinkedList.toArray(result);
+    }
+
     expect(zipFuncUnZip([1,2,6,3,4,5,6], 6, fn)).to.deep.equal([1,2,3,4,5]);
     expect(zipFuncUnZip([], 1, fn)).to.deep.equal([]);
     expect(zipFuncUnZip([7,7,7,7], 7, fn)).to.deep.equal([]);
 }
 
 
-function zipFuncUnZip(arr1: number[], target: number, fn: (head: ListNode | null, val: number) => ListNode | null): number[] {
-    const ll1 = LinkedList.fromArray(arr1);
-    const result = fn(ll1, target)
-    return LinkedList.toArray(result);
-}

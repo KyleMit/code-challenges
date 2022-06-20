@@ -17,6 +17,12 @@ export function deleteDuplicates(head: ListNode | null): ListNode | null {
 
 describe('deleteDuplicates', function() {
     it('passes test cases', () => {
+        const zipFuncUnZip = (arr1: number[], fn: (head: ListNode | null) => ListNode | null): number[] => {
+            const ll1 = LinkedList.fromArray(arr1);
+            const result = fn(ll1)
+            return LinkedList.toArray(result);
+        }
+
         expect(zipFuncUnZip([1,1,2], deleteDuplicates)).to.deep.equal([1,2]);
         expect(zipFuncUnZip([1,1,2,3,3], deleteDuplicates)).to.deep.equal([1,2,3]);
 
@@ -24,8 +30,3 @@ describe('deleteDuplicates', function() {
 })
 
 
-function zipFuncUnZip(arr1: number[], fn: (head: ListNode | null) => ListNode | null): number[] {
-    const ll1 = LinkedList.fromArray(arr1);
-    const result = fn(ll1)
-    return LinkedList.toArray(result);
-}

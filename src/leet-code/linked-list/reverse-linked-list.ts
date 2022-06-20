@@ -47,6 +47,12 @@ describe('reverseList2', function() {
 })
 
 function testCases(fn: (head: ListNode | null) => ListNode | null) {
+    const zipFuncUnZip = (arr1: number[], fn: (head: ListNode | null) => ListNode | null): number[] => {
+        const ll1 = LinkedList.fromArray(arr1);
+        const result = fn(ll1)
+        return LinkedList.toArray(result);
+    }
+
     expect(zipFuncUnZip([1,2,3,4,5], fn)).to.deep.equal([5,4,3,2,1]);
     expect(zipFuncUnZip([1,2], fn)).to.deep.equal([2,1]);
     expect(zipFuncUnZip([], fn)).to.deep.equal([]);
@@ -54,8 +60,3 @@ function testCases(fn: (head: ListNode | null) => ListNode | null) {
 
 
 
-function zipFuncUnZip(arr1: number[], fn: (head: ListNode | null) => ListNode | null): number[] {
-    const ll1 = LinkedList.fromArray(arr1);
-    const result = fn(ll1)
-    return LinkedList.toArray(result);
-}
