@@ -33,14 +33,14 @@ export function isAnagram2(source: string, target: string): boolean {
 
 
 describe('isAnagram', function() {
-    it('passes test cases', () => testCases(isAnagram))
-})
-describe('isAnagram2', function() {
-    it('passes test cases', () => testCases(isAnagram2))
+    const testCases = (fn: (source: string, target: string) => boolean) => {
+        expect(fn("anagram","nagaram")).to.equal(true);
+        expect(fn("rat","car")).to.equal(false);
+    }
+
+    it('v1', () => testCases(isAnagram))
+    it('v2', () => testCases(isAnagram2))
 })
 
 
-function testCases(fn: (source: string, target: string) => boolean) {
-    expect(isAnagram("anagram","nagaram")).to.equal(true);
-    expect(isAnagram("rat","car")).to.equal(false);
-}
+
