@@ -67,6 +67,8 @@
   * [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
   * [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)
   * [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
+  * [Min-max heap](https://en.wikipedia.org/wiki/Min-max_heap)
+  * [Priority queue](https://en.wikipedia.org/wiki/Priority_queue)
   * [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
   * [Trie (Prefix Tree)](https://en.wikipedia.org/wiki/Trie)
   * [Lowest common ancestor (LCA)](https://en.wikipedia.org/wiki/Lowest_common_ancestor)
