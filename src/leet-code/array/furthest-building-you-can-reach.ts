@@ -22,12 +22,14 @@ export function furthestBuilding(heights: number[], bricks: number, ladders: num
                 // to swap a ladder, it'll cost you the bricks that ladder gave us
                 bricks -= smallestLadder
 
+                // todo - expensive
                 const smallestLadderPos = maxLadders.indexOf(smallestLadder)
                 maxLadders.splice(smallestLadderPos, 1)
             }
             // add new ladder to collection
             maxLadders.push(delta)
-            // update smallest ladder
+            // find and set new smallest ladder
+            // todo - expensive
             smallestLadder = maxLadders.sort((a,b) => a - b)[0] ?? 0
             continue;
         }
