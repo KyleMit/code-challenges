@@ -1,7 +1,8 @@
 // https://leetcode.com/problems/furthest-building-you-can-reach/
 
 export function furthestBuilding(heights: number[], bricks: number, ladders: number): number {
-    let maxLadders = new Map<number,number>() // index, height
+    const maxLadders: number[] = [];
+    let smallestLadder = 0
 
     for (let i=0; i<heights.length; i++) {
         // if on last, we made it, return index
@@ -12,26 +13,22 @@ export function furthestBuilding(heights: number[], bricks: number, ladders: num
         // keep going if we're going down
         if (delta<=0) { continue }
 
-        // check if we should add cur deltas
-        // todo - this check is still costly
-        const smallestLadder = [...maxLadders.entries()].sort((a,b) => a[1] - b[1])[0] ?? [0,0]
-
         // replace ladder if we found a bigger deltas
         // and we can cover previous ladder with remaining bricks
-        const shouldReplaceLadder = delta > smallestLadder[1] && bricks > smallestLadder[1]
+        const shouldReplaceLadder = delta > smallestLadder && bricks > smallestLadder
 
-        if (maxLadders.size < ladders || shouldReplaceLadder) {
-            if (maxLadders.size == ladders) {
+        if (maxLadders.length < ladders || shouldReplaceLadder) {
+            if (maxLadders.length == ladders) {
                 // to swap a ladder, it'll cost you the bricks that ladder gave us
-                bricks -= smallestLadder[1]
-                maxLadders.delete(smallestLadder[0])
-            }
-            maxLadders.set(i, delta)
-        }
+                bricks -= smallestLadder
 
-        // check if we should use ladder
-        if (maxLadders.has(i)) {
-            // don't need to decrement, just only use available deltas, go to next building
+                const smallestLadderPos = maxLadders.indexOf(smallestLadder)
+                maxLadders.splice(smallestLadderPos, 1)
+            }
+            // add new ladder to collection
+            maxLadders.push(delta)
+            // update smallest ladder
+            smallestLadder = maxLadders.sort((a,b) => a - b)[0] ?? 0
             continue;
         }
 
