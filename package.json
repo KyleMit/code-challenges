@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Hacker Rank Sample Problems",
   "scripts": {
-    "test": "mocha --no-deprecation --require chai/register-expect --require ts-node/register src/**/*.ts"
+    "test": "mocha --no-deprecation --require chai/register-expect --require ts-node/register src/**/*.ts --exclude src/**/*.slow.ts",
+    "test:all": "mocha --no-deprecation --require chai/register-expect --require ts-node/register src/**/*.ts",
+    "test:slow": "mocha --no-deprecation --require chai/register-expect --require ts-node/register src/**/*.slow.ts"
   },
   "repository": {
     "type": "git",
