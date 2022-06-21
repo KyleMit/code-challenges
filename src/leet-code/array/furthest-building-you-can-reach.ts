@@ -1,56 +1,50 @@
 // https://leetcode.com/problems/furthest-building-you-can-reach/
 
 export function furthestBuilding(heights: number[], bricks: number, ladders: number): number {
-    // use ladders on highest delta
+    let maxLadders = new Map<number,number>() // index, height
 
-    let newMaxDelta = true;
-    let maxDeltas = new Map<number,number>() // index, height
+    for (let i=0; i<heights.length; i++) {
+        // if on last, we made it, return index
+        if (i===heights.length-1) return i;
 
-    while (newMaxDelta) {
-        newMaxDelta = false;
-        let remainingBricks = bricks; // start each try with full bricks
+        const delta = heights[i+1] - heights[i]
 
-        for (let i=0; i<heights.length; i++) {
-            // if on last, we made it, return index
-            if (i===heights.length-1) return i;
+        // keep going if we're going down
+        if (delta<=0) { continue }
 
-            const delta = heights[i+1] - heights[i]
+        // check if we should add cur deltas
+        // todo - this check is still costly
+        const smallestLadder = [...maxLadders.entries()].sort((a,b) => a[1] - b[1])[0] ?? [0,0]
 
-            // keep going if we're going down
-            if (delta<=0) { continue }
+        // replace ladder if we found a bigger deltas
+        // and we can cover previous ladder with remaining bricks
+        const shouldReplaceLadder = delta > smallestLadder[1] && bricks > smallestLadder[1]
 
-            // check if we should use max delta
-            if (maxDeltas.has(i)) {
-                // don't need to decrement, just only use available deltas, go to next building
-                continue;
+        if (maxLadders.size < ladders || shouldReplaceLadder) {
+            if (maxLadders.size == ladders) {
+                // to swap a ladder, it'll cost you the bricks that ladder gave us
+                bricks -= smallestLadder[1]
+                maxLadders.delete(smallestLadder[0])
             }
-
-            // check if we should add cur deltas
-            const smallestLadder = [...maxDeltas.entries()].sort((a,b) => a[1] - b[1])[0] ?? [0,0]
-
-            // replace ladder if we found a bigger deltas
-            // and we can cover previous ladder with remaining bricks
-            const shouldReplaceLadder = delta > smallestLadder[1] && remainingBricks > smallestLadder[1]
-
-            if (maxDeltas.size < ladders || shouldReplaceLadder) {
-                if (maxDeltas.size == ladders) {
-                    maxDeltas.delete(smallestLadder[0])
-                }
-                maxDeltas.set(i, delta)
-                newMaxDelta = true;
-                break; // exit for loop, start over in while loop
-            }
-
-            // now we gotta use bricks
-            // decrement
-            remainingBricks -= delta;
-
-            // if we can't make it, return where we are
-            if (remainingBricks < 0) { return i }
-
-            // otherwise, proceed to next building
+            maxLadders.set(i, delta)
         }
+
+        // check if we should use ladder
+        if (maxLadders.has(i)) {
+            // don't need to decrement, just only use available deltas, go to next building
+            continue;
+        }
+
+        // now we gotta use bricks
+        // decrement
+        bricks -= delta;
+
+        // if we can't make it, return where we are
+        if (bricks < 0) { return i }
+
+        // otherwise, proceed to next building
     }
+
 
     return heights.length;
 };
