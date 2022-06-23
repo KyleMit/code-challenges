@@ -75,3 +75,4 @@
   * [Lexicographic order](https://en.wikipedia.org/wiki/Lexicographic_order)
 * Geeks for Geeks
   * [Tree Traversals (Inorder, Preorder and Postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder)
+  * [Min Heap in Java](https://www.geeksforgeeks.org/min-heap-in-java/)
